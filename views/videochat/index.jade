@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .pure-g
+    // Video area
+    #video-container.pure-u-2-3
+      video#their-video(autoplay='')
+      video#my-video(muted='true', autoplay='')
+    // Steps
+    .pure-u-1-3
+      h2 PeerJS Video Chat
+      // Get local audio/video stream
+      #step1
+        p
+          | Please click &grave;allow&grave; on the top of the screen so we can access your webcam and microphone for calls.
+        |   
+        #step1-error
+          p
+            | Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.
+          |     
+          a#step1-retry.pure-button.pure-button-error(href='#') Try again
+      // Make calls to others
+      #step2
+        p
+          | Your id: 
+          span#my-id ...
+        |   
+        p Share this id with others so they can call you.
+        |   
+        h3 Make a call
+        |   
+        .pure-form
+          input#callto-id(type='text', placeholder='Call user id...')
+          |     
+          a#make-call.pure-button.pure-button-success(href='#') Call
+      // Call in progress
+      #step3
+        p
+          | Currently in call with 
+          span#their-id ...
+        |   
+        p
+          a#end-call.pure-button.pure-button-error(href='#') End call
