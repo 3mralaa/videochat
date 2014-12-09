@@ -3,7 +3,7 @@
  // PeerJS object
  var peer = new Peer({
      key: 'peerjs',
-     host: '192.168.102.149',
+     host: 'localhost',
      port: 3000,
      path: '/peerjs',
      debug: 3
